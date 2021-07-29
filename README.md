@@ -17,7 +17,7 @@
     <img alt="PyPI" src="https://img.shields.io/pypi/v/adab?color=9cf">
   </a>
   <a href="https://www.gnu.org/licenses/gpl-3.0.html">
-    <img src="https://img.shields.io/pypi/l/adab?color=9cf&label=License" alt="الرخصة">
+    <img src="https://img.shields.io/pypi/l/Adab?color=9cf&label=License" alt="الرخصة">
   </a>
 </p>
 
