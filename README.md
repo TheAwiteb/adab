@@ -82,15 +82,15 @@ pip3 install adab
 from adab import adab
 
 # البحث العام
-resutl = adab.search()
-print("General Search", resutl, sep="\n\n", end="\n\n")
+result = adab.search()
+print("General Search", result, sep="\n\n", end="\n\n")
 
 # تخصيص البحث
-resutl = adab.search(
+result = adab.search(
     page=23, genres=[1, 2], 
         era=[2, 3, 1], user_type=[3, 2], 
             gender=['f'], writing_types=[15])
-print("Custom Search", resutl, sep="\n\n", end="\n\n")
+print("Custom Search", result, sep="\n\n", end="\n\n")
 ```
 <div dir="rtl">
 
@@ -162,12 +162,12 @@ print(result)
 from adab import adab
 
 # جميعها
-resutl = adab.genres()
-print("All", resutl, sep="\n\n", end="\n\n")
+result = adab.genres()
+print("All", result, sep="\n\n", end="\n\n")
 
 # عبر الايدي
-resutl = adab.genres(genre_id=1)
-print("By id", resutl, sep="\n\n", end="\n\n")
+result = adab.genres(genre_id=1)
+print("By id", result, sep="\n\n", end="\n\n")
 ```
 <div dir="rtl">
 
@@ -197,12 +197,12 @@ By id
 from adab import adab
 
 # جميعها
-resutl = adab.writing_types()
-print("All", resutl, sep="\n\n", end="\n\n")
+result = adab.writing_types()
+print("All", result, sep="\n\n", end="\n\n")
 
 # عبر الايدي
-resutl = adab.writing_types(type_id=15)
-print("By id", resutl, sep="\n\n", end="\n\n")
+result = adab.writing_types(type_id=15)
+print("By id", result, sep="\n\n", end="\n\n")
 ```
 <div dir="rtl">
 
@@ -235,12 +235,12 @@ By id
 from adab import adab
 
 # جميعها
-resutl = adab.era()
-print("All", resutl, sep="\n\n", end="\n\n")
+result = adab.era()
+print("All", result, sep="\n\n", end="\n\n")
 
 # عبر الايدي
-resutl = adab.era(era_id=3)
-print("By id", resutl, sep="\n\n", end="\n\n")
+result = adab.era(era_id=3)
+print("By id", result, sep="\n\n", end="\n\n")
 ```
 <div dir="rtl">
 
@@ -270,12 +270,12 @@ By id
 from adab import adab
 
 # جميعها
-resutl = adab.country()
-print("All", resutl, sep="\n\n", end="\n\n")
+result = adab.country()
+print("All", result, sep="\n\n", end="\n\n")
 
 # عبر الايدي
-resutl = adab.country(country_id=191)
-print("By id", resutl, sep="\n\n", end="\n\n")
+result = adab.country(country_id=191)
+print("By id", result, sep="\n\n", end="\n\n")
 ```
 <div dir="rtl">
 
@@ -307,12 +307,12 @@ By id
 from adab import adab
 
 # جميعها
-resutl = adab.user_type()
-print("All", resutl, sep="\n\n", end="\n\n")
+result = adab.user_type()
+print("All", result, sep="\n\n", end="\n\n")
 
 # عبر الايدي
-resutl = adab.user_type(type_id=3)
-print("By id", resutl, sep="\n\n", end="\n\n")
+result = adab.user_type(type_id=3)
+print("By id", result, sep="\n\n", end="\n\n")
 ```
 <div dir="rtl">
 
