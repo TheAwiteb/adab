@@ -1,6 +1,6 @@
 import setuptools
 
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 README_FILENAME = "README.md"
 KEYWORD = ['adab', 'adab.com', 'arabic','poetry', 'Arabic poetry', ]
 
