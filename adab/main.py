@@ -1,4 +1,5 @@
 import requests
+import re
 from bs4 import BeautifulSoup as bs4
 from typing import Optional, List
 
@@ -36,12 +37,20 @@ class Adab:
         """
         soup = bs4(str(html), "html.parser")
         if post:
-            # استخراج محتةى البوست (شعراو سرد الخ)
+            # العنصر الذي يوجد فيه اسم الشخص ورابط ملفه الشخصي
+            profile = soup.find_all('a', class_='profile_url')[1] if soup.find('a', class_='profile_url') else None
+            username = profile.text.strip() if profile else None
+            user_url = profile.get('href') if profile else None
+            user_img = re.findall("https://adab.com/.*/uploads/images/.*.['png', 'JPG']",
+                                    str(html))
             text = soup.find('p', attrs={'id': "post_content_view"}).text if soup.find('p', attrs={'id': "post_content_view"}) else None
-            title = text.split('\n')[0] if text else None
+            title = soup.find(class_="post-title").text.strip() if soup.find(class_="post-title") else None
             return {
                 "title": title,
                     "text": text,
+                        "username": username,
+                            "user_url": user_url,
+                                "user_img": user_img[0] if len(user_img) > 1 else None,
                     }
         else:
             # تحديد الالمنت الذي يحتوي معلومات اليوزر
@@ -51,7 +60,8 @@ class Adab:
             # استخراج رابط ملف المستخدم
             user_url = user_profile.get('href') if user_profile else None
             # استخراج صورة المستخدم
-            user_img = soup.find('img').get('src') if soup.find('img') else None
+            user_img = re.findall("https://adab.com/.*/uploads/images/.*.['png', 'JPG']",
+                                    str(html))
             # تحديد الامنت الذي يوجد مه المحتوى (عنوان ورابط ونبذة عن البوست)
             content = soup.find('div', class_="highlight_content")
             # تحديد الامنت الذي يوجد به عنوان ورابط البوست
@@ -67,7 +77,8 @@ class Adab:
             # ترتيبهم في قاموس
             return {
                 "username":username, "user_url": user_url,
-                "user_img": user_img, "post_url": post_url,
+                "user_img": user_img[0] if len(user_img) > 1 else None, 
+                "post_url": post_url,
                 "post_id": post_url.replace(self.post_url, '') if post_url else None, 
                 "post_title": post_title, "post_views": post_views, 
                 "post_short_text": post_short_text,
@@ -258,8 +269,10 @@ class Adab:
             post_content = self.__html_prepare(response.text, post=True)
             # ارجاعهم في دكشنري
             return {
-                "post_id": post_id, "title": post_content['title'],
-                    "post_content": post_content['text'], "releted_posts": releted_posts,
+                "username": post_content["username"], "user_url": post_content["user_url"],
+                "user_img": post_content["user_img"], "post_id": post_id, 
+                    "title": post_content['title'], "post_content": post_content['text'], 
+                        "releted_posts": releted_posts,
             }
     def search(self, text: Optional[str]="", page: Optional[int]=0, 
                 genres: Optional[List[int]]=[], user_type: Optional[List[int]]=[], 
