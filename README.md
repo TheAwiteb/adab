@@ -107,8 +107,8 @@ General search
 Custom Search
 
 {'page': 23, 'text': '', 'post_count': '246', 'result': [
-{'username': 'علية بنت المهدي', 'user_url': 'https://adab.com/Ulayya_Bint_Almahdi', 'user_img': 'https://adab.com/', 'post_url': 'https://adab.com/post/view_post/17697', 'post_id': '17697', 'post_title': 'بني الحبُّ على الجورِ فلو', 'post_views': '7464', 'post_short_text': 'بني الحبُّ على الجورِ فلو\nأنصَفَ المعشوقُ فيهِ لَسَمَجْ\nليسَ يستحسنُ في وصفِ الهوى\nعاشقٌ يَعْرِفُ تَ...'},
-{'username': 'ليلى الأخيلية', 'user_url': 'https://adab.com/Layla_AlAkheeliyya', 'user_img': 'https://adab.com/', 'post_url': 'https://adab.com/post/view_post/15107', 'post_id': '15107', 'post_title': 'جَزَى اللُّه شَرّا قابِضاً بصنيعه', 'post_views': '7036', 'post_short_text': 'جَزَى اللُّه شَرّا قابِضاً بصنيعه\nوكل امرىء يجزى بما كان ساعيا\nدعا قابضاً والمرهفات يردنه\nفقُبحْتَ م...'}, ...
+{'username': 'علية بنت المهدي', 'user_url': 'https://adab.com/Ulayya_Bint_Almahdi', 'user_img': None, 'post_url': 'https://adab.com/post/view_post/17697', 'post_id': '17697', 'post_title': 'بني الحبُّ على الجورِ فلو', 'post_views': '7464', 'post_short_text': 'بني الحبُّ على الجورِ فلو\nأنصَفَ المعشوقُ فيهِ لَسَمَجْ\nليسَ يستحسنُ في وصفِ الهوى\nعاشقٌ يَعْرِفُ تَ...'},
+{'username': 'ليلى الأخيلية', 'user_url': 'https://adab.com/Layla_AlAkheeliyya', 'user_img': None, 'post_url': 'https://adab.com/post/view_post/15107', 'post_id': '15107', 'post_title': 'جَزَى اللُّه شَرّا قابِضاً بصنيعه', 'post_views': '7036', 'post_short_text': 'جَزَى اللُّه شَرّا قابِضاً بصنيعه\nوكل امرىء يجزى بما كان ساعيا\nدعا قابضاً والمرهفات يردنه\nفقُبحْتَ م...'}, ...
 
 ```
 <div dir="rtl">
@@ -132,10 +132,13 @@ print(result)
 
 ```json
 {
+    "username": "ليلى الأخيلية", 
+    "user_url": "https://adab.com/Layla_AlAkheeliyya", 
+    "user_img": null,
     "post_id": 15107,
     "title": "جَزَى اللُّه شَرّا قابِضاً بصنيعه",
     "post_content": 
-        "جَزَى اللُّه شَرّا قابِضاً بصنيعه\n'
+        "جَزَى اللُّه شَرّا قابِضاً بصنيعه\n
         وكل امرىء يجزى بما كان ساعيا\n
         دعا قابضاً والمرهفات يردنه\n
         فقُبحْتَ مدعّوا، ولبّيك داعيَا\n
